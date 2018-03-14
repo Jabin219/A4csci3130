@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/BusinessNum"
         android:layout_width="395dp"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginTop="8dp"
         android:hint="BusinessNum"
         app:layout_constraintLeft_toRightOf="parent"
@@ -19,33 +19,41 @@
         android:id="@+id/Name"
         android:layout_width="395dp"
         android:layout_height="43dp"
+        android:layout_marginTop="8dp"
         android:hint="Name"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="57dp" />
+        app:layout_constraintTop_toBottomOf="@+id/BusinessNum" />
 
     <EditText
         android:id="@+id/PrimaryBusiness"
         android:layout_width="395dp"
         android:layout_height="43dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
         android:hint="PrimaryBusiness"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="100dp" />
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <EditText
         android:id="@+id/Address"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="Address"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="143dp" />
+        app:layout_constraintTop_toBottomOf="@+id/PrimaryBusiness" />
 
     <EditText
         android:id="@+id/Province"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="260dp"
+        android:layout_marginTop="8dp"
         android:hint="Province"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="189dp" />
+        app:layout_constraintTop_toBottomOf="@+id/Address"
+        app:layout_constraintVertical_bias="0.156" />
 
 
     <Button
@@ -54,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="280dp"
         android:onClick="submitInfoButton"
         android:text="Create Contact"
         app:layout_constraintHorizontal_bias="0.502"
