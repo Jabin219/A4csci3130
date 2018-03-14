@@ -5,52 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
-    <EditText
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:hint = "Name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/BusinessNum"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:hint="e-mail"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginLeft="8dp"
+        android:hint="BusinessNum"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="395dp"
+        android:layout_height="43dp"
+        android:hint="Name"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
+        tools:layout_editor_absoluteY="57dp" />
+
+    <EditText
+        android:id="@+id/PrimaryBusiness"
+        android:layout_width="395dp"
+        android:layout_height="43dp"
+        android:hint="PrimaryBusiness"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <EditText
+        android:id="@+id/Province"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:hint="Province"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="189dp" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="276dp"
+        android:onClick="updateContact"
         android:text="Update Data"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:onClick="updateContact"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="276dp"
+        android:onClick="eraseContact"
         android:text="Erase Contact"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp"
-        android:onClick="eraseContact"/>
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
