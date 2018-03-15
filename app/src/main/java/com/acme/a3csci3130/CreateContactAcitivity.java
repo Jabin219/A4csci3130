@@ -1,3 +1,7 @@
+/**
+ * @author Jiabin Liu
+ * This class is used to create a new business list on the firebase
+ */
 package com.acme.a3csci3130;
 
 import android.app.Activity;

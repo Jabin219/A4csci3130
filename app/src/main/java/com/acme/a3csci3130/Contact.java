@@ -1,3 +1,7 @@
+/**
+ * @author Jiabin Liu
+ * This is the contact object but I have modified it to a business list object
+ */
 package com.acme.a3csci3130;
 
 import com.google.firebase.database.Exclude;

@@ -4,12 +4,23 @@
     ".write": "true",
     "contacts": {
             "$contact": {
-                "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
-                },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-                }
+
+
+              "businessnum": {
+                ".validate": "newData.isString() && newData.val().matches.length = 9&&newData.val().matches(/^[000000000-999999999])"
+              },
+              "name": {
+                ".validate": "newData.isString() && newData.val().length > 1 && newData.val().length < 50"
+              },
+              "primarybusiness": {
+                ".validate": "newData.isString() && newData.val()==Fisher||newData.val()== Distributor||newData.val()== Processor||newData.val()== Fish Monger})"
+              },
+              "address": {
+                ".validate": "newData.isString() && newData.val().length < 50"
+              },
+              "province": {
+                ".validate": "newData.isString() && newData.val()==AB||newData.val()== BC||newData.val()== MB||newData.val()== NB||newData.val()== NL||newData.val()== NS||newData.val()== NT||newData.val()== NU||newData.val()== ON||newData.val()== PE||newData.val()== QC||newData.val()== SK||newData.val()== YT)"
+              }
             }
         }
   }
