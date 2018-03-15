@@ -32,14 +32,15 @@ public class CreateContactAcitivity extends Activity {
 
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
-        String businessnum = appState.firebaseReference.push().getKey();
+        String personID = appState.firebaseReference.push().getKey();
+        String businessnum = businessnumField.getText().toString();
         String name = nameField.getText().toString();
         String primarybusiness = primarybusinessField.getText().toString();
         String address = addressField.getText().toString();
         String province = provinceField.getText().toString();
-        Contact person = new Contact(businessnum, name, primarybusiness, address, province);
+        Contact person = new Contact(personID, businessnum, name, primarybusiness, address, province);
 
-        appState.firebaseReference.child(businessnum).setValue(person);
+        appState.firebaseReference.child(personID).setValue(person);
 
         finish();
 

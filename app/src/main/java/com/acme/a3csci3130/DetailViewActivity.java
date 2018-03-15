@@ -6,10 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 public class DetailViewActivity extends Activity {
 
     private EditText businessnumField, nameField, primarybusinessField, addressField, provinceField;
+    private Button update;
+    private Button erase;
     Contact receivedPersonInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +34,7 @@ public class DetailViewActivity extends Activity {
         addressField = (EditText) findViewById(R.id.Address);
         provinceField = (EditText) findViewById(R.id.Province);
 
+
         if(receivedPersonInfo != null){
             businessnumField.setText(receivedPersonInfo.businessnum);
             nameField.setText(receivedPersonInfo.name);
@@ -32,12 +44,40 @@ public class DetailViewActivity extends Activity {
         }
     }
 
-    public void updateContact(View v){
-        //TODO: Update contact funcionality
-    }
+
+
+        public void updateContact(View v) {
+            //TODO: Update contact funcionality
+            final MyApplicationData appState;
+            appState = ((MyApplicationData) getApplicationContext());
+            update = (Button) findViewById(R.id.updateButton);
+            update.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    String personID = receivedPersonInfo.uid;
+                    appState.firebaseReference.child(personID).child("businessnum").setValue(businessnumField.getText().toString());
+                    appState.firebaseReference.child(personID).child("name").setValue(nameField.getText().toString());
+                    appState.firebaseReference.child(personID).child("primarybusiness").setValue(primarybusinessField.getText().toString());
+                    appState.firebaseReference.child(personID).child("address").setValue(addressField.getText().toString());
+                    appState.firebaseReference.child(personID).child("province").setValue(provinceField.getText().toString());
+
+                }
+            });
+        }
+
+
 
     public void eraseContact(View v)
     {
         //TODO: Erase contact functionality
+        final MyApplicationData appState;
+        appState = ((MyApplicationData) getApplicationContext());
+        erase = (Button) findViewById(R.id.deleteButton);
+        erase.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String personID = receivedPersonInfo.uid;
+                appState.firebaseReference.child(personID).removeValue();
+            }
+        });
     }
 }
+

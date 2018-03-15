@@ -28,6 +28,7 @@ public class Contact implements Serializable {
     }
 
     public Contact(String uid, String businessnum, String name, String primarybusiness, String address, String province){
+        this.uid=uid;
         this.businessnum = businessnum;
         this.name = name;
         this.primarybusiness = primarybusiness;
